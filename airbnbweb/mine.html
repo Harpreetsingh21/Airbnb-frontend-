@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Airbnb clone</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #banner {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 80px;
+        padding-right: 80px;
+        box-sizing: border-box;
+        background-color: #f7f7f7;
+      }
+
+      #left {
+        padding-top: 22px;
+        padding-bottom: 20px;
+        color: #222222;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      #right {
+        width: 20%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        color: #222222;
+      }
+
+      #banner_img {
+        width: 53px;
+        height: 30px;
+        border-radius: 7px;
+      }
+
+      #navbar {
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 80px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+      #logo {
+      }
+
+      #middle-section {
+        width: 25%;
+        border: 1px solid #dddddd;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 40px;
+      }
+
+      #right-section {
+        width: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      #search {
+        font-size: 15px;
+        color: white;
+        background-color: #ff385c;
+        padding: 5px;
+        border-radius: 50%;
+      }
+      #week {
+        border-left: 1px solid #dddddd;
+        border-right: 1px solid #dddddd;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      #acc {
+        border: 1px solid #dddddd;
+        border-radius: 15px;
+        padding: 10px;
+      }
+
+      #category {
+        display: flex;
+        padding-left: 80px;
+        padding-right: 80px;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+
+      #category img {
+        height: 24px;
+        width: 24px;
+      }
+
+      #category > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #cards {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: auto;
+        padding-left: 80px;
+        padding-right: 80px;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      #cards > div {
+        position: relative;
+      }
+
+      #cards img {
+        width: 100%;
+      }
+
+      #star {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      img + #star ~ p {
+        margin-top: -10px;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
+      #rounded-heart {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+
+      #star-point{
+        position: absolute;
+        top: 190px;
+        right: 40px; 
+
+      }
+      
+      #price{
+        display: flex;
+        width: 40%;
+        border: 1px solid #dddddd;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 30px;
+        text-align: center;
+        margin: auto;
+      }
+      #left-one{
+        width: auto;
+        display: flex;
+        padding: auto;
+        margin-right:-40px;
+      }
+
+      #mid{
+        width: auto;
+        display: flex;
+        border-left: 1px solid #dddddd;
+        /* padding-left: 10px;
+        padding-right: 10px; */
+        padding: 0px 20px;
+        margin-left: 10px;
+    }
+
+      #right-one{
+        width: auto;
+        border-radius: 20px;
+        padding: 5px;
+      }
+
+      #ic{
+        border-radius: 50px;
+        font-size: 40px;
+        margin-top: 5px;
+        margin-left: 100px;
+        color: gray;
+      }
+      div.fixed{
+        position: fixed;
+        bottom: 1px;
+        right: 1px;
+        display: flex;
+        padding-top: auto;
+        border: 1px solid #dddddd;
+        background-color: #dddddd;
+        width: 100%;
+        justify-content: space-between;
+        padding-left: 80px;
+        padding-right: 50px;
+        box-sizing: border-box;
+        background-color: #f7f7f7;
+      }
+      
+      #rightfoot{
+        display: flex;
+        text-align: center;
+        margin: auto;
+        justify-content: space-around;
+        padding-left: 400px;
+      }
+      
+      #globe{
+        margin-top: 17px;
+      }
+
+      #p1{
+        padding-left: 10px;
+      }
+
+      #p2{
+        padding-left: 10px;
+      }
+
+      #p3{
+        padding-left: 10px;
+      }
+      #p4{
+        padding-left: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="left">Rooms and 50+ features</div>
+      <div id="right">
+        <img
+          id="banner_img"
+          src="https://a0.muscache.com/im/pictures/420c6e43-7896-4617-9ff4-ad05eb1f03f8.jpg?im_q=highq&im_w=240"
+          alt=""
+        />
+        <p>Play the Rooms film</p>
+        <p>Learn More</p>
+      </div>
+    </div>
+
+    <!-- Second section -->
+    <div id="navbar">
+      <div id="logo">
+        <img
+          height="64px"
+          width="118px"
+          src="https://1000logos.net/wp-content/uploads/2023/01/Airbnb-logo-768x432.png"
+          alt=""
+        />
+      </div>
+      <div id="middle-section">
+        <p>Anywhere</p>
+        <p id="week">Any week</p>
+        <p>Add guests</p>
+        <i id="search" class="fas fa-search search-icon"></i>
+      </div>
+      <div id="right-section">
+        <p>Airbnb your home</p>
+        <i class="fas fa-globe"></i>
+        <div id="acc">
+          <i class="fas fa-bars"></i>
+          <i class="far fa-user"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Categories section -->
+    <div id="category">
+      <div>
+        <img
+          src="https://a0.muscache.com/pictures/7630c83f-96a8-4232-9a10-0398661e2e6f.jpg"
+          alt=""
+        />
+        <p>Rooms</p>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg"
+          alt=""
+        />
+        <p>Amazing pools</p>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/pictures/aaa02c2d-9f0d-4c41-878a-68c12ec6c6bd.jpg"
+          alt=""
+        />
+        <p>Farms</p>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/pictures/bcd1adc0-5cee-4d7a-85ec-f6730b0f8d0c.jpg"
+          alt=""
+        />
+        <p>Beachfront</p>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg"
+          alt=""
+        />
+        <p>Amazing views</p>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/pictures/732edad8-3ae0-49a8-a451-29a8010dcc0c.jpg"
+          alt=""
+        />
+        <p>Cabins</p>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/pictures/4d4a4eba-c7e4-43eb-9ce2-95e1d200d10e.jpg"
+          alt=""
+        />
+        <p>Treehouses</p>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/pictures/c5a4f6fc-c92c-4ae8-87dd-57f1ff1b89a6.jpg"
+          alt=""
+        />
+        <p>OMG!</p>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/pictures/50861fca-582c-4bcc-89d3-857fb7ca6528.jpg"
+          alt=""
+        />
+        <p>Design</p>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/pictures/ee9e2a40-ffac-4db9-9080-b351efc3cfc4.jpg"
+          alt=""
+        />
+        <p>Tropical</p>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/pictures/677a041d-7264-4c45-bb72-52bff21eb6e8.jpg"
+          alt=""
+        />
+        <p>Lakefront</p>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/pictures/6ad4bd95-f086-437d-97e3-14d12155ddfe.jpg"
+          alt=""
+        />
+        <p>Countryside</p>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/pictures/c0a24c04-ce1f-490c-833f-987613930eca.jpg"
+          alt=""
+        />
+        <p>National parks</p>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/pictures/c8e2ed05-c666-47b6-99fc-4cb6edcde6b4.jpg"
+          alt=""
+        />
+        <p>Luxe</p>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/pictures/1b6a8b70-a3b6-48b5-88e1-2243d9172c06.jpg"
+          alt=""
+        />
+        <p>Castles</p>
+      </div>
+      <div>
+        <i id="greater" class="fas fa-chevron-circle-right"></i>
+      </div>
+      
+    </div>
+<!-- display price -->
+    <div id="price">
+        <div id="left-one">
+            <p>Display total price</p>
+        </div>
+        <div id="mid">
+            <p>includes all fee, before taxes</p>
+        </div>
+        <div id="right-one">
+            <i id="ic" class="fa fa-toggle-on" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    <div id="cards">
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/miso/Hosting-2694793/original/a6d39bc6-9564-4503-8b84-c796ecda03af.jpeg?im_w=720"
+          alt=""
+        />
+        <div id="star">
+          <p>Surry Hills, Australia</p>
+          <p>4.92</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Bron. Business owner</p>
+        <p>26 Jul - 1 Aug</p>
+        <p>$8,761 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/miso/Hosting-51809333/original/0da70267-d9da-4efb-9123-2714b651c9fd.jpeg?im_w=720"
+          alt=""
+        />
+        <div id="star">
+          <p>Milan, Italy</p>
+          <p>5.00</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Valentina. Interior designer</p>
+        <p>31 May - 5 Jun</p>
+        <p>$8,220 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/miso/Hosting-23206143/original/e7da1f36-922f-4631-a287-91ceda05970f.jpeg?im_w=720"
+          alt=""
+        />
+        <div id="star">
+          <p>Lindfield, UK</p>
+          <p>4.98</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Michelle & Michael. Food artist</p>
+        <p>25-30 Jun</p>
+        <p>$11,175 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/miso/Hosting-26300485/original/ee94e6c1-6ebc-496e-af84-1502edd1b759.jpeg?im_w=720"
+          alt=""
+        />
+        <div id="star">
+          <p>London, UK</p>
+          <p>4.83</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Amelia. Hosting for 5 years</p>
+        <p>1-6 Aug</p>
+        <p>$6,140 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/miso/Hosting-29919648/original/38def551-c7d8-4731-8d86-ff57f7f10bc2.jpeg?im_w=720"
+          alt=""
+        />
+        <div id="star">
+          <p>Lisbon, Portugal</p>
+          <p>4.87</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Diogo.Interior designer</p>
+        <p>15-21 Jun</p>
+        <p>$11,234 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/miso/Hosting-11579006/original/0eb18b3d-9bca-4e1c-bb84-15101b07832b.jpeg?im_w=720"
+          alt=""
+        />
+        <div id="star">
+          <p>Valencia, Spain</p>
+          <p>4.85</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Sagrario.Coach</p>
+        <p>20-27 Jun</p>
+        <p>$4,028 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/miso/Hosting-6354436/original/bf9457a9-5093-4999-ba1f-35b38a0146f5.jpeg?im_w=720"
+          alt=""
+        />
+        <div id="star">
+          <p>Bearsden, UK</p>
+          <p>4.98</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Rhona.Language teacher</p>
+        <p>23-28 Jun</p>
+        <p>$7,616 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/miso/Hosting-10989371/original/46c0c87f-d9bc-443c-9b64-24d9e594b54c.jpeg?im_w=720"
+          alt=""
+        />
+        <div id="star">
+          <p>Velencia, Spain</p>
+          <p>4.87</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Sagrario.Coach</p>
+        <p>20-27 Sep</p>
+        <p>$3,508 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/miso/Hosting-13903824/original/82d996fb-d7c4-46a8-a713-febd281cd69f.jpeg?im_w=720"
+          alt=""
+        />
+        <div id="star">
+          <p>Torino, Italy</p>
+          <p>4.88</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Carmela.Hosting for 7 years</p>
+        <p>4-10 Aug</p>
+        <p>$4,174 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/airflow/Hosting-1197834/original/2c2cf7d3-cfa7-46f6-b9d7-cfd88fef90eb.jpg?im_w=720"
+          alt=""
+        />
+        <div id="star">
+          <p>Edinburgh, UK</p>
+          <p>4.88</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Felicitas.Parent & tour guide</p>
+        <p>3-10 Oct</p>
+        <p>$15,818 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/miso/Hosting-13016398/original/6c59e24d-89f3-4475-aaca-80363792fb51.jpeg?im_w=720"
+          alt=""
+        />
+        <div id="star">
+          <p>Malakoff, France</p>
+          <p>4.85</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Jacques-Oliver. Gerant ssii</p>
+        <p>21-26 Jun</p>
+        <p>$6,127 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/miso/Hosting-576599054777073307/original/53e611cc-b827-4cec-850e-c1db1274de43.jpeg?im_w=720"
+          alt=""
+        />
+        <div id="star">
+          <p>Enghien-les-Bains, France</p>
+          <p>4.00</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Joseph.Works in advertising</p>
+        <p>24-30 Jun</p>
+        <p>7,212 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/airflow/Hosting-714258423682866070/original/960755ad-ce79-4606-8f17-7c2d6c64fe41.jpg?im_w=720"
+          alt=""
+        />
+        <div id="star">
+          <p>Wirobrajan, Indonesia</p>
+          <p>4.85</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Sri.Retired civilservant</p>
+        <p>25-30 Jun</p>
+        <p>$1,724 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/miso/Hosting-39974109/original/4bf3e6ff-555a-4553-973e-a371d4331e43.jpeg?im_w=720"
+          alt=""
+        />
+        <div id="star">
+          <p>Paris, France</p>
+          <p>4.94</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Romain.Artist</p>
+        <p>20-25 Oct</p>
+        <p>$12,535 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/miso/Hosting-746919020186561409/original/98f1a8c7-a263-46a8-8757-1f5d9d39f8bb.jpeg?im_w=720"
+          alt=""
+        />
+        <div id="star">
+          <p>Kobenhavn, Denmark</p>
+          <p>5.00</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Shamiel.Entreprenoeur</p>
+        <p>18-13 Sep</p>
+        <p>$7,158 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/miso/Hosting-43210221/original/168b20ae-e51f-42a7-8da2-494409847ff6.jpeg?im_w=720"
+          alt=""
+        />
+        <div id="star">
+          <p>Rome, Italy</p>
+          <p>5.00</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Chiara.Writer and filmakerr</p>
+        <p>31 Jul - 5 Aug</p>
+        <p>$9,675 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/miso/Hosting-761521121343082881/original/d334c373-bf21-4fce-aff6-0dc085f7bd28.jpeg?im_w=720"
+        />
+        <div id="star">
+          <p>Madrid, spain</p>
+          <p>5.94</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Sara</p>
+        <p>25 Jul - 1 Aug</p>
+        <p>$10,212 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/miso/Hosting-814937613380365669/original/7ee4b2be-ec19-4f57-bf2d-fe459b3b79cb.jpeg?im_w=720"
+        />
+        <div id="star">
+          <p>Seddon, Australia</p>
+          <p>5.00</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Rob And Helena.Educator</p>
+        <p>2-8 Jun</p>
+        <p>$6,279 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/miso/Hosting-566028065891205462/original/8272f279-b785-4533-b9e5-b400a37d6a52.jpeg?im_w=720"
+        />
+        <div id="star">
+          <p>Kobenhavn, Denmark</p>
+          <p>4.96</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Bo.Cheif commer officer</p>
+        <p>4-9 Oct</p>
+        <p>$10,105 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src="https://a0.muscache.com/im/pictures/b7854c47-4521-48ed-a3ae-30f63d8561a3.jpg?im_w=720"
+        />
+        <div id="star">
+          <p>Bangkok, Thailand</p>
+          <p>4.94</p>
+          <i id="star-point" class='fa fa-star'></i>
+        </div>
+        <p>Stay with Bua. Works in hospitality</p>
+        <p>3-8 Sep</p>
+        <p>$7,746 night</p>
+        <i id="rounded-heart" class="fas fa-heart heart"></i>
+      </div>
+      <div>
+        <img
+          src=""
+        />
+        <div id="star">
+          <p></p>
+          <p></p>
+          <!-- <i id="star-point" class='fa fa-star'></i> -->
+        </div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <!-- <i id="rounded-heart" class="fas fa-heart heart"></i> -->
+      </div>
+      
+
+    </div>
+
+    <!-- footer -->
+    <div class="fixed">
+        <div id="leftfoot">
+            <p>@2023 Airbnb,inc . Privacy . Terms . Sitemap . Company details . Destinations</p>
+        </div>
+        <div id="rightfoot">
+            <i id="globe" class="fas fa-globe"></i>
+            <p id="p1">English(IN)</p>
+            <p id="p2">&#x20B9; INR</p>
+            <p id="p3">Support&resources</p>
+            <p id="p4">^</p>
+        </div>
+    </div>
+  </body>
+</html>
